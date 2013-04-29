@@ -16,7 +16,7 @@ module Socialshare
   end
 
   def share_on_twitter(text,options)
-    twitter_connection = Tweeter::TwitterConnection.new
+    twitter_connection = Tweeter::TwitterConnection.new(options)
     twitter_connection.post(text,options)
   end
 
@@ -26,7 +26,7 @@ module Socialshare
   end
 
   def share_on_linkedin(text,options)
-    linkedin_conn = Linkdin::LinkedinConnection.new
+    linkedin_conn = Linkdin::LinkedinConnection.new(options)
     linkedin_conn.post(text,options)
   end
 

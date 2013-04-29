@@ -1,5 +1,12 @@
 module Tweeter
   class TwitterConnection
+    attr_accessor :consumer_key, :consumer_secret
+
+    def initialize(options)
+      api_key = options["consumer_key"]
+      secret_key = options["consumer_secret"]
+    end
+
     def post(text, options)
       user = get_twitter_client(options)
       user.update(text) if user.present?
@@ -36,8 +43,8 @@ module Tweeter
 
     protected
       def get_twitter_client(options)
-        Twitter::Client.new(:consumer_key => TWITTER_CONSUMER_KEY,
-                                 :consumer_secret => TWITTER_CONSUMER_SECRET,
+        Twitter::Client.new(:consumer_key => self.consumer_key,
+                                 :consumer_secret => self.consumer_secret,
                                  :oauth_token => options[:token],
                                  :oauth_token_secret => options[:secret]
                                 ) 

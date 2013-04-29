@@ -1,6 +1,11 @@
 module Linkdin
   class LinkedinConnection
-    
+    attr_accessor :api_key, :secret_key
+    def initialize(options)
+      api_key = options["api_key"]
+      secret_key = options["secret_key"]
+    end
+
     def post(text,options)
       user = get_linkedin_user(options) 
       user.add_share(:comment => text) if user.present?
@@ -19,9 +24,8 @@ module Linkdin
 
     protected 
       def get_linkedin_user(options)
-        user = LinkedIn::Client.new(LINKEDIN_API_KEY, LINKEDIN_SECRET_KEY)
+        user = LinkedIn::Client.new(self.api_key, self.secret_key)
         user.authorize_from_access(options[:token], options[:secret]) if user.present?  
       end
-
   end
 end
