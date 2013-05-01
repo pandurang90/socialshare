@@ -1,5 +1,5 @@
-module Linkdin
-  class LinkedinConnection
+module Socialshare
+  class Linkdin
     attr_accessor :api_key, :secret_key, :linkdin_user
 
     def initialize(options = {})
