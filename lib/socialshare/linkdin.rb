@@ -1,29 +1,30 @@
 module Linkdin
   class LinkedinConnection
-    attr_accessor :api_key, :secret_key
+    attr_accessor :api_key, :secret_key, :linkdin_user
+
     def initialize(options = {})
-      api_key = options["api_key"]
-      secret_key = options["secret_key"]
+      @api_key = options[:api_key]
+      @secret_key = options[:secret_key]
+      @linkdin_user = get_linkedin_user(options) 
     end
 
-    def post(text,options = {})
-      user = get_linkedin_user(options) 
-      user.update_status(text) 
+    def post(text)
+      self.linkdin_user.update_status(text) 
     end
 
     def get_linkedin_profile(options = {})
-      user = get_linkedin_user(options) 
-      if options["id"].present?
-        user.profile(:id => options["id"])
+      if options[:id].present?
+        self.linkdin_user.profile(:id => options[:id])
       else
-        user.profile 
+        self.linkdin_user.profile 
       end
     end
 
     protected 
       def get_linkedin_user(options = {})
-        user = LinkedIn::Client.new(self.api_key, self.secret_key)
-        user.authorize_from_access(options["token"], options["secret"])
+        user = LinkedIn::Client.new(options[:api_key], options[:secret_key])
+        user.authorize_from_access(options[:token], options[:secret])
+        user
       end
   end
 end

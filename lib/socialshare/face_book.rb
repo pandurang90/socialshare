@@ -1,18 +1,21 @@
 module FaceBook
   class FacebookConnection
-    def post(text,options = {})
-      user = get_fb_user(options[:fb_token])
-      user.put_wall_post(text)
+    attr_accessor :fb_token, :fb_user
+
+    def initialize(options = {})
+      @fb_token = options[:fb_token]
+      @fb_user = get_fb_user(options[:fb_token])
+    end
+    def post(text)
+      self.fb_user.put_wall_post(text)
     end
 
-    def get_facebook_profile(options = {})
-      user = get_fb_user(options[:fb_token])
-      profile = user.get_object("me")
+    def get_facebook_profile
+      profile = self.fb_user.get_object("me")
     end
 
-    def get_facebook_connections(options = {})
-      user = get_fb_user(options[:fb_token])
-      user.get_connections("me", "friends")
+    def get_facebook_connections
+      self.fb_user.get_connections("me", "friends")
     end
     
     protected 
