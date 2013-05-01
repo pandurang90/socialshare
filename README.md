@@ -20,10 +20,10 @@ Or install it yourself as:
 
 1) for twitter
 
-    s = Socialshare.share("TWITTER",:consumer_key => TWITTER_CONSUMER_KEY, 
-                                    :consumer_secret => TWITTER_CONSUMER_SECRET,
-                                    :user_token => twitter_user_token, 
-                                    :user_secret => twitter_user_secret)
+    s = Socialshare.twitter(:consumer_key => TWITTER_CONSUMER_KEY, 
+                            :consumer_secret => TWITTER_CONSUMER_SECRET,
+                            :user_token => twitter_user_token, 
+                            :user_secret => twitter_user_secret)
 
     s.post(text)                              #to tweet on twitter
 
@@ -41,7 +41,7 @@ Or install it yourself as:
 
 2) for facebook
 
-    s = Socialshare.share("FACEBOOK", :fb_token => facebook_user_token)
+    s = Socialshare.facebook(:fb_token => facebook_user_token)
 
     s.post(text)                              #to post on facebook
 
@@ -51,7 +51,7 @@ Or install it yourself as:
 
 3) for Linkedin
 
-    s = Socialshare.share("LINKEDIN", :api_key => LINKEDIN_API_KEY, :secret_key => LINKEDIN_SECRET_KEY)
+    s = Socialshare.linkedin(:api_key => LINKEDIN_API_KEY, :secret_key => LINKEDIN_SECRET_KEY)
 
     s.post(text)                              #to post on linkedin
 
