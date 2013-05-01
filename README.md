@@ -18,7 +18,6 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
 1) for twitter
 
   s = Socialshare.share("TWITTER", options)
