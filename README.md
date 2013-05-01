@@ -1,6 +1,6 @@
 # Socialshare
 
-TODO: Write a gem description
+Ruby interface to update status on social networking sites.
 
 ## Installation
 
