@@ -1,5 +1,5 @@
 module Socialshare
-  class Twitter
+  class Tweetter
     attr_accessor :consumer_key, :consumer_secret, :user_token, :user_secret, :twitter_user
 
     def initialize(options = {})
