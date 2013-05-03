@@ -31,4 +31,4 @@ module Socialshare
   end
 end
 
-l= Socialshare::Linkdin.new(:api_key=>"u75dvcqku00k",:api_secret=> "KH6gnEKHs71Ph8Vx",:token=>"2cbd9768-0d73-424c-ae08-49f300d9d1d6", :secret=>"2cbd9768-0d73-424c-ae08-49f300d9d1d6")
+
