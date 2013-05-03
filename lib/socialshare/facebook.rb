@@ -1,3 +1,5 @@
+require 'koala'
+
 module Socialshare
   class Facebook
     attr_accessor :fb_token, :fb_user

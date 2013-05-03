@@ -1,3 +1,5 @@
+require 'twitter'
+
 module Socialshare
   class Tweeter
     attr_accessor :consumer_key, :consumer_secret, :user_token, :user_secret, :twitter_user
