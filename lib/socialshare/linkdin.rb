@@ -15,7 +15,7 @@ module Socialshare
     end
 
     def get_linkedin_profile(options = {})
-      if options[:id].present?
+      if options[:id]
         self.linkdin_user.profile(:id => options[:id])
       else
         self.linkdin_user.profile 
@@ -30,3 +30,5 @@ module Socialshare
       end
   end
 end
+
+l= Socialshare::Linkdin.new(:api_key=>"u75dvcqku00k",:api_secret=> "KH6gnEKHs71Ph8Vx",:token=>"2cbd9768-0d73-424c-ae08-49f300d9d1d6", :secret=>"2cbd9768-0d73-424c-ae08-49f300d9d1d6")
