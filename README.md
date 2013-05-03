@@ -20,7 +20,7 @@ Or install it yourself as:
 
 1) for twitter
 
-    s = Socialshare::Twitter.new(:consumer_key => TWITTER_CONSUMER_KEY, 
+    s = Socialshare::Tweeter.new(:consumer_key => TWITTER_CONSUMER_KEY, 
                             :consumer_secret => TWITTER_CONSUMER_SECRET,
                             :user_token => twitter_user_token, 
                             :user_secret => twitter_user_secret)

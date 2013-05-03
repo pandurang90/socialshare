@@ -1,6 +1,6 @@
 require "socialshare/version"
 require "socialshare/tweeter"
-require "socialshare/face_book"
+require "socialshare/facebook"
 require "socialshare/linkdin"
 
 module Socialshare
