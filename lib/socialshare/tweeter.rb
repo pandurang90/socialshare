@@ -38,7 +38,7 @@ module Socialshare
 
 
     def fetch_tweet_by_id(tweet_id)
-
+      begin
         self.twitter_user.status(tweet_id)
       rescue Execption => e
         return e
