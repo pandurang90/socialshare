@@ -2,7 +2,7 @@ require 'linkedin'
 
 module Socialshare
   class Linkdin
-    attr_accessor :api_key, :secret_key, :linkdin_user,:user_token, :user_secret,
+    attr_accessor :api_key, :secret_key, :linkdin_user,:user_token, :user_secret
 
     def initialize(options = {})
       @api_key = options[:api_key]
