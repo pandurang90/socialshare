@@ -21,10 +21,14 @@ module Socialshare
     end
 
     def get_linkedin_profile(options = {})
-      if options[:id]
-        self.linkdin_user.profile(:id => options[:id])
-      else
-        self.linkdin_user.profile 
+      begin
+        if options[:id]
+          self.linkdin_user.profile(:id => options[:id])
+        else
+          self.linkdin_user.profile 
+        end
+      rescue Exception => e
+        return e
       end
     end
 

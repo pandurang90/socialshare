@@ -16,7 +16,7 @@ module Socialshare
       begin
         self.twitter_user.update(text)
       rescue Exception => e
-        return e.to_s
+        return e
       end
     end
 
@@ -46,13 +46,17 @@ module Socialshare
     end
 
     def fetch_twitter_friends(options = {})
-      if options[:name]
-        self.twitter_user.friends(options[:name])
-      elsif options[:id]
-        self.twitter_user.friends(options[:id])
-      else  
-        self.twitter_user.friends
-      end
+      begin
+        if options[:name]
+          self.twitter_user.friends(options[:name])
+        elsif options[:id]
+          self.twitter_user.friends(options[:id])
+        else  
+          self.twitter_user.friends
+        end
+      rescue Exception => e
+        return e
+      end     
     end
 
     protected
