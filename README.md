@@ -56,7 +56,7 @@ Or install it yourself as:
                                  :user_token => twitter_user_token, 
                                  :user_secret => twitter_user_secret)
 
-    s.post(:comment => text)                              #to post on linkedin
+    s.post(text)                              #to post on linkedin
 
     s.get_linkedin_profile                    #to get your linkedin profile  
 
