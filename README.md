@@ -51,7 +51,10 @@ Or install it yourself as:
 
 3) for Linkedin
 
-    s = Socialshare::Linkdin.new(:api_key => LINKEDIN_API_KEY, :secret_key => LINKEDIN_SECRET_KEY)
+    s = Socialshare::Linkdin.new(:api_key => LINKEDIN_API_KEY, 
+                                 :secret_key => LINKEDIN_SECRET_KEY,
+                                 :user_token => twitter_user_token, 
+                                 :user_secret => twitter_user_secret)
 
     s.post(text)                              #to post on linkedin
 

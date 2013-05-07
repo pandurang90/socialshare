@@ -2,16 +2,18 @@ require 'linkedin'
 
 module Socialshare
   class Linkdin
-    attr_accessor :api_key, :secret_key, :linkdin_user
+    attr_accessor :api_key, :secret_key, :linkdin_user,:user_token, :user_secret,
 
     def initialize(options = {})
       @api_key = options[:api_key]
       @secret_key = options[:secret_key]
+      @user_token = options[:user_token]
+      @user_secret = options[:user_secret]
       @linkdin_user = get_linkedin_user(options) 
     end
 
     def post(text)
-      self.linkdin_user.update_status(text) 
+      self.linkdin_user.add_share(:comment => text) 
     end
 
     def get_linkedin_profile(options = {})
@@ -25,7 +27,7 @@ module Socialshare
     protected 
       def get_linkedin_user(options = {})
         user = LinkedIn::Client.new(options[:api_key], options[:secret_key])
-        user.authorize_from_access(options[:token], options[:secret])
+        user.authorize_from_access(options[:user_token], options[:user_secret])
         user
       end
   end
