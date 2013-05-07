@@ -11,7 +11,7 @@ module Socialshare
     def post(text)
       begin
         self.fb_user.put_wall_post(text)
-      rescue Execption => e
+      rescue Exception => e
         return e
       end
     end

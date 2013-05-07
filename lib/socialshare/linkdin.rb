@@ -15,7 +15,7 @@ module Socialshare
     def post(text)
       begin 
         self.linkdin_user.add_share(:comment => text) 
-      rescue Execption => e
+      rescue Exception => e
         return e
       end
     end

@@ -15,7 +15,7 @@ module Socialshare
     def post(text)
       begin
         self.twitter_user.update(text)
-      rescue Execption => e
+      rescue Exception => e
         return e.to_s
       end
     end
@@ -23,7 +23,7 @@ module Socialshare
     def get_twitter_profile
       begin
         self.twitter_user.home_timeline
-      rescue Execption => e
+      rescue Exception => e
         return e
       end
     end
@@ -31,7 +31,7 @@ module Socialshare
     def get_twitter_followers
       begin
         self.twitter_user.followers
-      rescue Execption => e
+      rescue Exception => e
         return e
       end
     end  
@@ -40,7 +40,7 @@ module Socialshare
     def fetch_tweet_by_id(tweet_id)
       begin
         self.twitter_user.status(tweet_id)
-      rescue Execption => e
+      rescue Exception => e
         return e
       end
     end
