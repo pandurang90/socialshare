@@ -13,7 +13,11 @@ module Socialshare
     end
 
     def post(text)
-      self.linkdin_user.add_share(:comment => text) 
+      begin 
+        self.linkdin_user.add_share(:comment => text) 
+      rescue Execption => e
+        return e
+      end
     end
 
     def get_linkedin_profile(options = {})

@@ -13,20 +13,36 @@ module Socialshare
     end
 
     def post(text)
-      self.twitter_user.update(text)
+      begin
+        self.twitter_user.update(text)
+      rescue Execption => e
+        return e.to_s
+      end
     end
 
     def get_twitter_profile
-      self.twitter_user.home_timeline
+      begin
+        self.twitter_user.home_timeline
+      rescue Execption => e
+        return e
+      end
     end
 
     def get_twitter_followers
-      self.twitter_user.followers
+      begin
+        self.twitter_user.followers
+      rescue Execption => e
+        return e
+      end
     end  
 
 
     def fetch_tweet_by_id(tweet_id)
-      self.twitter_user.status(tweet_id)
+
+        self.twitter_user.status(tweet_id)
+      rescue Execption => e
+        return e
+      end
     end
 
     def fetch_twitter_friends(options = {})

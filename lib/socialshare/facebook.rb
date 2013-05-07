@@ -9,7 +9,11 @@ module Socialshare
       @fb_user = get_fb_user(options[:fb_token])
     end
     def post(text)
-      self.fb_user.put_wall_post(text)
+      begin
+        self.fb_user.put_wall_post(text)
+      rescue Execption => e
+        return e
+      end
     end
 
     def get_facebook_profile
