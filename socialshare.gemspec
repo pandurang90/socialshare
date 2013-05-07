@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["pandurang.plw@gmail.com"]
   gem.description   = %q{This gem allows text/messages to be shared on social networking sites (twitter,facebook,linkedin)}
   gem.summary       = %q{This gem allows text/messages to be shared on social networking sites (twitter,facebook,linkedin)}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/pandurang90/socialshare"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
