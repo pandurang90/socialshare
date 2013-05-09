@@ -27,7 +27,15 @@ Or install it yourself as:
 
     s.post(text)                              #to tweet on twitter
 
-    s.get_twitter_profile                     #to get your twitter timeline
+    s.get_twitter_profile                     #to get your twitter profile
+
+    s.user_timeline                           #to get your twitter timeline  
+
+    s.get_twitter_home_timeline               #to get home twitter timeline  
+
+    s.update_profile_photo(YOUR_IMAGE_PATH)   #update your twitter profile image      
+
+    s.update_profile_background_photo(YOUR_IMAGE_PATH)         #update your twitter profile background image
 
     s.get_twitter_followers                   #to get your twitter followers
 
@@ -48,6 +56,10 @@ Or install it yourself as:
     s.get_facebook_profile                    #to get your facebook profile  
 
     s.get_facebook_connections                #to get your facebook connections
+
+    s.share_picture(FILE_PATH)                #to share image on facebook  
+
+    s.share_video(FILE_PATH)                  #to share video on facebook  
 
 3) for Linkedin
 

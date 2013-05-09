@@ -17,11 +17,35 @@ module Socialshare
     end
 
     def get_facebook_profile
-      profile = self.fb_user.get_object("me")
+      begin
+        profile = self.fb_user.get_object("me")
+      rescue Exception => e
+        return e
+      end
     end
 
     def get_facebook_connections
-      self.fb_user.get_connections("me", "friends")
+      begin
+        self.fb_user.get_connections("me", "friends")
+      rescue Exception => e
+        return e
+      end
+    end
+
+    def share_picture(file_path)
+      begin
+        self.fb_user.put_picture(File.open(file_path))
+      rescue Exception => e
+        return e
+      end
+    end
+
+    def share_video(file_path)
+      begin
+        self.fb_user.put_video(File.open(file_path))
+      rescue Exception => e
+        return e
+      end
     end
     
     protected 

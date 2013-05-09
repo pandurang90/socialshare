@@ -22,6 +22,38 @@ module Socialshare
 
     def get_twitter_profile
       begin
+        self.twitter_user.user
+      rescue Exception => e
+        return e
+      end
+    end
+
+    def update_profile_photo(file_path)
+      begin
+        self.twitter_user.update_profile_image(File.open(file_path))
+      rescue Exception => e
+        return e
+      end
+    end
+
+    def update_profile_background_photo(file_path)
+      begin
+        self.twitter_user.update_profile_background_image(File.open(file_path))
+      rescue Exception => e
+        return e
+      end
+    end
+
+    def user_timeline
+      begin
+        self.twitter_user.user_timeline
+      rescue Exception => e
+        return e
+      end
+    end
+  
+    def get_twitter_home_timeline
+      begin
         self.twitter_user.home_timeline
       rescue Exception => e
         return e
@@ -35,7 +67,6 @@ module Socialshare
         return e
       end
     end  
-
 
     def fetch_tweet_by_id(tweet_id)
       begin
