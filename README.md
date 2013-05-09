@@ -1,6 +1,6 @@
 # Socialshare
 
-Ruby interface to update status on social networking sites.
+Ruby interface to update status(text, image, video) on social networking sites(Facebook, Twitter, Linkedin).
 
 ## Installation
 
