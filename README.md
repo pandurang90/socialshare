@@ -22,8 +22,8 @@ Or install it yourself as:
 
     s = Socialshare::Tweeter.new(:consumer_key => TWITTER_CONSUMER_KEY, 
                             :consumer_secret => TWITTER_CONSUMER_SECRET,
-                            :user_token => twitter_user_token, 
-                            :user_secret => twitter_user_secret)
+                            :token => twitter_user_token, 
+                            :secret => twitter_user_secret)
 
     s.post(text)                              #to tweet on twitter
 
