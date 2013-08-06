@@ -31,7 +31,7 @@ Or install it yourself as:
 
     s.user_timeline                           #to get your twitter timeline
 
-    s.twitter_user.update_with_media(text,YOUR_FILE_PATH)      #to tweet on twitter with image or video  
+    s.twitter_user.update_with_media(text,File.open(YOUR_FILE_PATH))      #to tweet on twitter with image or video  
 
     s.get_twitter_home_timeline               #to get home twitter timeline  
 
