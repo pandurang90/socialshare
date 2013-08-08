@@ -15,7 +15,7 @@ module Socialshare
     def post(text,options = {})
       begin
         if options.present?
-          s.twitter_user.update_with_media(text,File.open(options[:file])) 
+          self.twitter_user.update_with_media(text,File.open(options[:file])) 
         else
           self.twitter_user.update(text)
         end
