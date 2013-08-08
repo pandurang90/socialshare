@@ -12,9 +12,13 @@ module Socialshare
       @twitter_user = get_twitter_client(options)
     end
 
-    def post(text)
+    def post(text,options = {})
       begin
-        self.twitter_user.update(text)
+        if options.present?
+          s.twitter_user.update_with_media(text,File.open(options[:file])) 
+        else
+          self.twitter_user.update(text)
+        end
       rescue Exception => e
         return e
       end

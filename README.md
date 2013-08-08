@@ -27,11 +27,11 @@ Or install it yourself as:
 
     s.post(text)                              #to tweet on twitter
 
+    s.post(text,{:file => YOUR_FILE_PATH})    #to tweet on twitter with image or video
+
     s.get_twitter_profile                     #to get your twitter profile
 
     s.user_timeline                           #to get your twitter timeline
-
-    s.twitter_user.update_with_media(text,File.open(YOUR_FILE_PATH))      #to tweet on twitter with image or video  
 
     s.get_twitter_home_timeline               #to get home twitter timeline  
 
